@@ -111,7 +111,7 @@
 
                             </ul>
                         </div>
-                        <div class="product-size_box">
+                        <!-- <div class="product-size_box">
                             <span>Size</span>
                             <select class="myniceselect nice-select">
                                 <option value="1">S</option>
@@ -119,8 +119,8 @@
                                 <option value="3">L</option>
                                 <option value="4">XL</option>
                             </select>
-                        </div>
-                        <div class="color-list_area">
+                        </div> -->
+                        <!-- <div class="color-list_area">
                             <div class="color-list_heading">
                                 <h4>Available Options</h4>
                             </div>
@@ -147,29 +147,22 @@
                                     <span class="color-text">Black (+$125)</span>
                                 </a>
                             </div>
-                        </div>
-                        <div class="quantity">
+                        </div> -->
+                        <!-- <div class="quantity">
                             <label>Quantity</label>
                             <div class="cart-plus-minus">
                                 <input class="cart-plus-minus-box" value="1" type="text">
                                 <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
                                 <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="qty-btn_area">
                             <ul>
-                                <li><a class="qty-cart_btn" href="cart.html">Add To Cart</a></li>
-                                <li><a class="qty-wishlist_btn" href="wishlist.html" data-bs-toggle="tooltip" title="Add To Wishlist"><i class="ion-android-favorite-outline"></i></a>
-                                </li>
-                                <li><a class="qty-compare_btn" href="compare.html" data-bs-toggle="tooltip" title="Compare This Product"><i class="ion-ios-shuffle-strong"></i></a></li>
+                                <li><a class="qty-cart_btn" href="cart.html">Thuê ngay</a></li>
+                                <li><a class="qty-cart_btn" href="cart.html">Liên hệ</a></li>
                             </ul>
                         </div>
-                        <div class="kenne-tag-line">
-                            <h6>Tags:</h6>
-                            <a href="javascript:void(0)">scarf</a>,
-                            <a href="javascript:void(0)">jacket</a>,
-                            <a href="javascript:void(0)">shirt</a>
-                        </div>
+                       
                         <div class="kenne-social_link">
                             <ul>
                                 <li class="facebook">
@@ -214,9 +207,9 @@
                 <div class="sp-product-tab_nav">
                     <div class="product-tab">
                         <ul class="nav product-menu">
+                        <li><a data-bs-toggle="tab" href="#reviews"><span>Liên hệ thuê váy</span></a></li>
                             <li><a class="active" data-bs-toggle="tab" href="#description"><span>Bình luận</span></a></li>
-                            <li><a data-bs-toggle="tab" href="#specification"><span>Đánh giá của khách hàng đã thuê</span></a></li>
-                            <li><a data-bs-toggle="tab" href="#reviews"><span>Liên hệ thuê váy</span></a></li>
+                            <li><a data-bs-toggle="tab" href="#specification"><span>Đánh giá của khách hàng đã thuê</span></a></li>         
                         </ul>
                     </div>
                     <div class="tab-content uren-tab_content">
@@ -347,10 +340,10 @@
                                                         chúng ta cho là ít rõ ràng, đã có trước các hình thức văn học của con người như thế nào.</p>
                                                     <div class="single-contact-block">
                                                         <h4><i class="fa fa-fax"></i> Địa chỉ</h4>
-                                                        <p>123 Main Street, Anytown, CA 12345 – USA</p>
+                                                        <p>199 Hồ tùng mậu</p>
                                                     </div>
                                                     <div class="single-contact-block">
-                                                        <h4><i class="fa fa-phone"></i> Điện thoại</h4>
+                                                        <h4><i class="fa fa-phone"></i>Số điện thoại</h4>
                                                         <p>Di động: (08) 123 456 789</p>
                                                         <p>Hotline: 09999999</p>
                                                     </div>
@@ -363,7 +356,7 @@
                                             </div>
                                             <div class="col-lg-6 col-md-12 order-2 order-lg-1">
                                                 <div class="contact-form-content">
-                                                    <h3 class="contact-page-title">Tell Us Your Message</h3>
+                                                    <h3 class="contact-page-title">Liên hệ với chúng tôi</h3>
                                                     <!-- Phần thống báo lỗi -->
                                                     <!-- <?php
                                                             if (isset($_SESSION['error_mess'])) {
@@ -380,23 +373,23 @@
                                                     <div class="contact-form">
                                                         <form id="" action="?url=contactus&id=<?= $data["id_san_pham"] ?>" method="post">
                                                             <div class="form-group">
-                                                                <label>Your Name <span class="required">*</span></label>
+                                                                <label>Họ tên<span class="required">*</span></label>
                                                                 <input type="text" name="ten_khach_hang" id="ten_khach_hang">
                                                             </div>
                                                             <div class="form-group">
-                                                                <label>Your Email <span class="required">*</span></label>
+                                                                <label>Email<span class="required">*</span></label>
                                                                 <input type="email" name="email" id="email">
                                                             </div>
                                                             <div class="form-group">
-                                                                <label>Phone Number<span class="required">*</span></label>
+                                                                <label>Số điện thoại<span class="required">*</span></label>
                                                                 <input type="text" name="dien_thoai" id="dien_thoai">
                                                             </div>
                                                             <div class="form-group form-group-2">
-                                                                <label>Your Message<span class="required">*</span></label>
+                                                                <label>Lời nhắn<span class="required">*</span></label>
                                                                 <textarea name="noi_dung" id="noi_dung"></textarea>
                                                             </div>
                                                             <div class="form-group">
-                                                                <input type="submit" value="Send" class="kenne-contact-form_btn" name="submit">
+                                                                <input type="submit" value="Gửi" class="kenne-contact-form_btn" name="submit">
                                                             </div>
                                                         </form>
                                                     </div>

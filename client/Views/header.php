@@ -41,7 +41,6 @@
 </head>
 
 <body class="template-color-2">
-
     <div class="main-wrapper">
         <header class="main-header_area-2">
             <div class="header-top_area d-none d-lg-block">
@@ -102,6 +101,15 @@
                                         <img src="client/assets/images/menu/logo/1.png" alt="Header Logo" width="150px">
                                     </a>
                                 </div>
+
+                                <div class="header-search_area d-none d-lg-block">
+                                    <form class="search-form" action="#">
+                                        <input type="text" style="width: 600px;" placeholder="Tìm kiếm"> <!-- Điều chỉnh chiều dài tại đây -->
+                                        <button class="search-button"><i class="ion-ios-search"></i></button>
+                                    </form>
+                                </div>
+
+
                                 <div class="header-contact d-none d-md-flex">
                                     <i class="fa fa-headphones-alt"></i>
                                     <div class="contact-content">
@@ -112,33 +120,8 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="header-search_area d-none d-lg-block">
-                                    <form class="search-form" action="#">
-                                        <input type="text" placeholder="Tìm kiếm">
-                                        <button class="search-button"><i class="ion-ios-search"></i></button>
-                                    </form>
-                                </div>
-                                <div class="header-right_area d-none d-lg-inline-block">
-                                    <ul>
-                                        <li class="mobile-menu_wrap d-flex d-lg-none">
-                                            <a href="#mobileMenu" class="mobile-menu_btn toolbar-btn color--white">
-                                                <i class="ion-android-menu"></i>
-                                            </a>
-                                        </li>
-                                        <li class="minicart-wrap">
-                                            <a href="index.php?url=cart" class="minicart-btn">
-                                                <div class="minicart-count_area">
-                                                    <span class="item-count">03</span>
-                                                    <i class="ion-ios-heart"></i>
-                                                </div>
-                                                <div class="minicart-front_text">
-                                                    <span>Cart:</span>
-                                                    <span class="total-price">462.4</span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
+
+
                             </div>
                         </div>
                     </div>
@@ -202,12 +185,12 @@
                                                     <ul>
                                                         <li class="dropdown-holder"><a href="index.php?url=/">Trang chủ</a>
                                                         </li>
-                                                        <li><a href="index.php?url=productpage">Váy cưới đẹp<i class="ion-chevron-down"></i></a>
+                                                        <li><a href="index.php?url=productpage">Sản phẩm<i class="ion-chevron-down"></i></a>
                                                             <ul class="kenne-dropdown">
-                                                                <li><a href="index.php?url=productpage">Váy cưới đi làm lễ</a></li>
-                                                                <li><a href="index.php?url=productpage">Váy cưới đi bàn</a></li>
-                                                                <li><a href="index.php?url=productpage">Áo dài cưới</a></li>
-                                                                <!-- <li><a href="index.php?url=page">Page</a></li> -->
+                                                                <li><a href="index.php?url=all-aocuoi">Tất cả</a></li>
+                                                                <li><a href="index.php?url=aocuoilamle">Váy cưới đi làm lễ</a></li>
+                                                                <li><a href="index.php?url=aocuoidiban">Váy cưới đi bàn</a></li>
+                                                                <li><a href="index.php?url=aodaicuoi">Áo dài cưới</a></li>
                                                             </ul>
                                                         </li>
                                                         <li><a href="index.php?url=page">Bộ sự tập <i class="ion-chevron-down"></i></a>
@@ -237,14 +220,13 @@
                                                             <i class="ion-android-menu"></i>
                                                         </a>
                                                     </li>
-                                                    <li class="minicart-wrap">
-                                                        <a href="#miniCart" class="minicart-btn toolbar-btn">
-                                                            <div class="minicart-count_area">
-                                                                <span class="item-count">03</span>
-                                                                <i class="ion-ios-heart-outline"></i>
-                                                            </div>
-                                                        </a>
-                                                    </li>
+
+
+
+
+
+
+
                                                     <li>
                                                         <a href="#searchBar" class="search-btn toolbar-btn">
                                                             <i class="ion-android-search"></i>
