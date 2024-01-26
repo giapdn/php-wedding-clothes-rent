@@ -3,50 +3,52 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <form action="?url=add-baiviet" method="post" enctype="multipart/form-data" style="padding: 20px;">
-                    <div class="form-group">
-                        <label>Tiêu đề</label>
-                        <input type="text" class="form-control" name="tieu_de" id="name" placeholder="Nhập tiêu đề cho bài viết">
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <label>Nội dung</label>
-                        <input type="text" class="form-control" name="noi_dung" id="name" placeholder="Nhập nội dung cho bài viết">
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <label for="prodImg">Ảnh bài viết</label>
-                        <div class="custom-file">
-                            <input type="file" name="path" class="custom-file-input" id="exampleInputFile">
+                <div class="card-body">
+                    <form action="?url=add-baiviet" method="post" enctype="multipart/form-data">
+                        <div class="form-group mb-3">
+                            <label class="form-label">Tiêu đề</label>
+                            <input type="text" class="form-control" name="tieu_de" id="name" placeholder="Nhập tiêu đề cho bài viết">
                         </div>
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <label>Người đăng</label>
-                        <select class="form-select" name="username">
-                            <?php foreach ($listusername as $pr) { ?>
-                                <option value="<?php echo $pr["username"] ?>"><?php echo $pr["username"] ?></option>
-                            <?php } ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Trạng thái</label>
-                        <select name="trangthai">
-                        <option value="0" selected>Private</option>
-                            <option value="1">Public</option>
-                            
-                        </select>
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <button type="submit" name="list" class="btn btn-primary" onclick="goToList()">Danh sách</button>
-                        <button type="submit" name="them" class="btn btn-primary">Thêm</button>
-                    </div>
-                </form>
-                <form action="?url=import-baidang" method="post" enctype="multipart/form-data">
-                    <input require type="file" name="file">
-                    <input type="submit" value="Tải lên">
-                </form>
+
+                        <div class="form-group mb-3">
+                            <label class="form-label">Nội dung</label>
+                            <input type="text" class="form-control" name="noi_dung" id="name" placeholder="Nhập nội dung cho bài viết">
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label class="form-label" for="prodImg">Ảnh bài viết</label>
+                            <div class="custom-file">
+                                <input type="file" name="path" class="form-control" id="exampleInputFile">
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label class="form-label">Người đăng</label>
+                            <select class="form-select" name="username">
+                                <?php foreach ($listusername as $pr) { ?>
+                                    <option value="<?php echo $pr["username"] ?>"><?php echo $pr["username"] ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="form-label">Trạng thái</label>
+                            <select class="form-select" name="trangthai">
+                                <option value="0" selected>Private</option>
+                                <option value="1">Public</option>
+
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <button type="submit" name="list" class="btn btn-primary" onclick="goToList()">Danh sách</button>
+                            <button type="submit" name="them" class="btn btn-success">Thêm</button>
+                        </div>
+                    </form>
+                    <form action="?url=import-baidang" method="post" enctype="multipart/form-data">
+                        <input require type="file" name="file">
+                        <input class="btn btn-primary" type="submit" value="Tải lên">
+                    </form>
+                </div>
             </div>
         </div>
     </div>

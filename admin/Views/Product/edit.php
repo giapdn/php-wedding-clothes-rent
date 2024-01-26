@@ -7,58 +7,67 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <form action="?url=sua-product" method="post" enctype="multipart/form-data" style="padding: 15px;">
-                    <label for="ID">ID sản phẩm </label><br>
-                    <input type="text" name="id_san_pham" class="btn btn-primary" readonly value="<?= $id_san_pham ?>"> <br> <br>
-
-                    <label for="Name">Tên sản phẩm </label>
-                    <input type="text" name="ten_san_pham" class="form-control" value="<?= $ten_san_pham ?>"> <br><br>
-
-                    <div class="form-group">
-                        <label for="prodPrice">Giá </label>
-                        <div class="input-group mb-3">
-                            <div class="input-group-append">
-                                <span class="input-group-text">$</span>
-                            </div>
-                            <input type="text" name="gia_san_pham" class="form-control" value="<?= $gia_san_pham ?>">
+                <div class="card-body">
+                    <form action="?url=sua-product" method="post" enctype="multipart/form-data">
+                        <div class="form-group mb-3">
+                            <label class="form-label" for="ID">ID sản phẩm </label>
+                            <input type="text" name="id_san_pham" class="form-control" readonly value="<?= $id_san_pham ?>">
                         </div>
-                    </div>
-                    <br><br>
 
-                    <label>Ảnh </label>
-                    <br>
-                    <input type="file" name="img_path_default" class="custom-file-input" id="exampleInputFile" value="">
-                    <img src="uploads/<?= $img_path_default ?>" alt="" height="50px">
-                    <br><br>
+                        <div class="form-group mb-3">
+                            <label class="form-label" for="Name">Tên sản phẩm </label>
+                            <input type="text" name="ten_san_pham" class="form-control" value="<?= $ten_san_pham ?>">
+                        </div>
 
-                    <label>Mô tả </label>
-                    <input type="text" name="mo_ta_san_pham" class="form-control" value="<?= $mo_ta_san_pham ?>"> <br><br>
+                        <div class="form-group mb-3">
+                            <label class="form-label" for="prodPrice">Giá </label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">$</span>
+                                </div>
+                                <input type="text" name="gia_san_pham" class="form-control" value="<?= $gia_san_pham ?>">
+                            </div>
+                        </div>
 
-                    <label>Mã sản phẩm </label>
-                    <input type="text" name="ma_san_pham" class="form-control" value="<?= $ma_san_pham ?>"> <br><br>
+                        <div class="form-group mb-3">
+                            <label class="form-label">Ảnh </label>
 
-                    <div class="form-group">
-                        <label>Id danh mục</label>
-                        <select class="form-select" name="id_danh_muc">
-                            <?php foreach ($danhmuc as $dm) { ?>
-                                <option value="<?php echo $dm["id_danh_muc"] ?>"><?php echo $dm["mo_ta"] ?></option>
-                            <?php } ?>
-                        </select>
-                    </div>
+                            <input type="file" name="img_path_default" class="custom-file-input" id="exampleInputFile" value="">
+                            <img src="uploads/<?= $img_path_default ?>" alt="" height="100px">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="form-label">Mô tả </label>
+                            <textarea  class="form-control" name="mo_ta_san_pham" id="basic-icon-default-message" cols="30" rows="5"><?= $mo_ta_san_pham ?>"</textarea>
+                           
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="form-label">Mã sản phẩm </label>
+                            <input type="text" name="ma_san_pham" class="form-control" value="<?= $ma_san_pham ?>">
+                        </div>
 
-                    <div class="form-group">
-                        <label>Trạng thái</label>
-                        <select class="form-select" name="status">
-                            <option value="0" selected>Ẩn</option>
-                            <option value="1">Hiện</option>
-                        </select>
-                    </div>
+                        <div class="form-group mb-3">
+                            <label class="form-label">Id danh mục</label>
+                            <select class="form-select" name="id_danh_muc">
+                                <?php foreach ($danhmuc as $dm) { ?>
+                                    <option value="<?php echo $dm["id_danh_muc"] ?>"><?php echo $dm["mo_ta"] ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
 
-                    <input type="hidden" name="id_san_pham" value="<?= $id_san_pham ?>">
+                        <div class="form-group mb-3">
+                            <label class="form-label">Trạng thái</label>
+                            <select class="form-select" name="status">
+                                <option value="0" selected>Ẩn</option>
+                                <option value="1">Hiện</option>
+                            </select>
+                        </div>
 
-                    <input type="submit" name="list" class="btn btn-primary" value="Danh sách" onclick="goToList()">
-                    <input type="submit" name="sua" class="btn btn-primary" value="Sửa">
-                </form>
+                        <input type="hidden" name="id_san_pham" value="<?= $id_san_pham ?>">
+
+                        <input type="submit" name="list" class="btn btn-primary" value="Danh sách" onclick="goToList()">
+                        <input type="submit" name="sua" class="btn btn-warning" value="Sửa">
+                    </form>
+                </div>
             </div>
         </div>
     </div>
