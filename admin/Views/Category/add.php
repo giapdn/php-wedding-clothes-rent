@@ -3,26 +3,23 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <form action="?url=add-category" method="post" enctype="multipart/form-data" style="padding: 20px;">
-                    <div class="form-group">
-                        <label>Mô tả</label>
-                        <input type="text" class="form-control" name="mo_ta" id="name" placeholder="Nhập tên danh mục">
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <label for="prodImg">Ảnh danh mục</label>
-                        <div class="custom-file">
-                            <input type="file" name="path" class="custom-file-input" id="exampleInputFile">
+                <div class="card-body">
+                    <form action="?url=add-category" method="post" enctype="multipart/form-data">
+                        <div class="form-group mb-3">
+                            <label class="form-label">Mô tả</label>
+                            <input type="text" class="form-control" name="mo_ta" id="name" placeholder="Nhập tên danh mục">
                         </div>
-                    </div>
-                    <br>
+                        <div class="form-group mb-3">
+                            <label class="form-label" for="prodImg">Ảnh danh mục</label>
+                            <input type="file" name="path" class="form-control" id="exampleInputFile">
+                        </div>
+                        <div class="form-group mb-3">
 
-                    <div class="form-group">
-
-                        <button type="submit" name="list" class="btn btn-primary" onclick="goToList()">Danh sách</button>
-                        <button type="submit" name="them" class="btn btn-primary">Thêm</button>
-                    </div>
-                </form>
+                            <button type="submit" name="list" class="btn btn-primary" onclick="goToList()">Danh sách</button>
+                            <button type="submit" name="them" class="btn btn-success">Thêm</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

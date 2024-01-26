@@ -1,15 +1,15 @@
 <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Sản phẩm /</span> Danh sách sản phẩm</h4>
-    <div class="a">
+    <div class="d-flex">
 
 
-        <a href="?url=add-product"><input class="btn btn-primary" type="submit" name="them" value="Thêm"></a>
-        <a href="?url=xuat-ds-product"><input class="btn btn-primary" type="submit" name="them" value="Xuất ds"></a>
+        <a href="?url=add-product"><input class="btn btn-success" type="submit" name="them" value="Thêm"></a>
+        <a href="?url=xuat-ds-product"><input class="btn btn-info" type="submit" name="them" value="Xuất Danh Sách"></a>
 
 
         <form method="post">
-            <div class="d-flex justify-content-end" style="margin-bottom: 10px;">
-                <input class="p o v" type="text" name="noidung" placeholder="nhập tên tiêu đề" style="border-radius: 5px;">
+            <div class="d-flex" style="margin-bottom: 10px;">
+                <input class="form-control" type="text" name="noidung" placeholder="nhập tên tiêu đề" style="border-radius: 5px;">
                 <input class="btn btn-primary p o v" type="submit" name="btn" value="Tìm kiếm">
             </div>
         </form>
