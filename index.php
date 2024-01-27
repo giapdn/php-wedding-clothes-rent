@@ -4,10 +4,12 @@ require_once "./client/Controllers/lienHeController.php";
 require_once "./client/Controllers/ProductController.php";
 require_once "./client/Controllers/CommentController.php";
 require_once "./client/Controllers/AuthController.php";
+require_once "./client/Controllers/VoteController.php";
 $lienheCtrll = new lienHeController();
 $productCtrll = new ProductController();
 $commentCtrll = new CommentController();
 $authCtrll = new AuthController();
+$voteCtrll = new VoteController();
 $url = isset($_GET['url']) == true ? $_GET['url'] : '/';
 
 switch ($url) {
@@ -42,7 +44,7 @@ switch ($url) {
         $lienheCtrll->insertLienHe();
         break;
     case 'aboutus':
-        include "client/Views/About/aboutus.php";
+        $voteCtrll->Index();
         break;
     case 'productpage':
         include "client/Views/Product/productpage.php";
@@ -68,6 +70,11 @@ switch ($url) {
         break;
     case 'logOut':
         $authCtrll->LogOut();
+        break;
+
+        //Case đánh giá
+    case 'danhgia':
+        $voteCtrll->AddVote();
         break;
     default:
         $productCtrll->ListFiltered();
