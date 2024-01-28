@@ -6,7 +6,7 @@ class Product extends BaseModel
 {
     public function allProduct()
     {
-        $sql = "SELECT * FROM tb_sanpham where status = 1";  
+        $sql = "SELECT * FROM tb_sanpham where status = 1";
         return $this->SqlExecute($sql);
     }
     public function xoaProduct($id)
@@ -48,13 +48,14 @@ class Product extends BaseModel
         $sql = "UPDATE tb_sanpham SET status = 0 WHERE id_san_pham=$id";
         return $this->SqlExecute($sql, 1);
     }
-    public function dsspAn(){
-        $sql = "SELECT * FROM tb_sanpham where status = 0";  
+    public function dsspAn()
+    {
+        $sql = "SELECT * FROM tb_sanpham where status = 0";
         return $this->SqlExecute($sql);
     }
-    public function hienThiSanPhamAn($id){
+    public function hienThiSanPhamAn($id)
+    {
         $sql = "UPDATE tb_sanpham SET status = 1 WHERE id_san_pham=$id";
         return $this->SqlExecute($sql, 1);
-    
     }
 }

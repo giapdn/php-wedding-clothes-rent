@@ -5,15 +5,20 @@
             <?php
             foreach ($baidang as $bd) {
             }
-            if ($bd['trangthai'] == 0) {
+            if (isset($bd["trangthai"])) {
+                if ($bd['trangthai'] == 0) {
+                    echo ' <a href="?url=list-baiviet"><input class="btn btn-info" type="submit" name="them" value="Danh Sách"></a>';
+                } elseif ($bd['trangthai'] == 1) {
+                    echo '
+                    <a href="?url=add-baiviet"><input class="btn btn-success" type="submit" name="them" value="Thêm"></a>
+                    <a href="?url=dsan-baiviet"><input class="btn btn-secondary" type="submit" name="an" value="Danh sách ẩn"></a>
+                    <a href="?url=export-baiviet"><input class="btn btn-info" type="submit" name="them" value="Xuất Danh Sách"></a>
+                    ';
+                }
+            } else {
                 echo ' <a href="?url=list-baiviet"><input class="btn btn-info" type="submit" name="them" value="Danh Sách"></a>';
-            } elseif ($bd['trangthai'] == 1) {
-                echo '
-                <a href="?url=add-baiviet"><input class="btn btn-success" type="submit" name="them" value="Thêm"></a>
-                <a href="?url=dsan-baiviet"><input class="btn btn-secondary" type="submit" name="an" value="Danh sách ẩn"></a>
-                <a href="?url=export-baiviet"><input class="btn btn-info" type="submit" name="them" value="Xuất Danh Sách"></a>
-                ';
             }
+
             ?>
         </div>
         <form action="?url=timkiemBaiDang" method="post">
@@ -41,6 +46,15 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php
+                            if (empty($baidang)) {
+                                echo <<<HTML
+                                    <tr>
+                                        <td>Trống !</td>
+                                    </tr>
+                                HTML;
+                            }
+                            ?>
                             <?php foreach ($baidang as $key => $bai) :
                                 $xoa = "?url=xoa-baiviet&id=" . $bai['id_bai_dang'];
                                 $xoa_sort = "?url=xoasort-baiviet&id=" . $bai['id_bai_dang'];
@@ -59,7 +73,7 @@
                                         <div class="change" style="display: flex; ">
                                             <form action="<?= $xoa ?>" method="post">
                                                 <input class="btn btn-warning" type="submit" name="" value="Xóa">
-                                    
+
                                             </form>
                                             <?php
                                             if ($bd['trangthai'] == 1) {

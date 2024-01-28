@@ -6,21 +6,27 @@
             <?php
             foreach ($sanpham as $key => $sp) {
             }
-            if ($sp['status'] == 1) {
-                echo '
-                <a href="?url=add-product"><input class="btn btn-success" type="submit" name="them" value="Thêm"></a>
-                <a href="?url=sp-an"><input class="btn btn-secondary" type="submit" name="span" value="Sản phẩn ẩn"></a>
-                ';
-            } else {
+            if (isset($sp["status"])) {
+                if ($sp['status'] == 1) {
+                    echo <<<HTML
+                        <a href="?url=add-product"><input class="btn btn-success" type="submit" name="them" value="Thêm"></a>
+                        <a href="?url=sp-an"><input class="btn btn-secondary" type="submit" name="span" value="Sản phẩn ẩn"></a>
+                    HTML;
+                } else {
+                }
             }
             ?>
 
 
             <?php
-            if ($sp['status'] == 0) {
+            if (isset($sp["status"])) {
+                if ($sp['status'] == 0) {
+                    echo ' <a href="?url=list-product"><input class="btn btn-info" type="submit" name="them" value="Danh Sách"></a>';
+                } elseif ($sp['status'] == 1) {
+                    echo '<a href="?url=xuat-ds-product"><input class="btn btn-info" type="submit" name="them" value="Xuất Danh Sách"></a>';
+                }
+            } else {
                 echo ' <a href="?url=list-product"><input class="btn btn-info" type="submit" name="them" value="Danh Sách"></a>';
-            } elseif ($sp['status'] == 1) {
-                echo '<a href="?url=xuat-ds-product"><input class="btn btn-info" type="submit" name="them" value="Xuất Danh Sách"></a>';
             }
             ?>
         </div>
@@ -50,6 +56,15 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php
+                        if (count($sanpham) == 0) {
+                            echo <<<HTML
+                                <tr>
+                                    <td>Trống !</td>
+                                </tr>
+                            HTML;
+                        }
+                        ?>
                         <?php foreach ($sanpham as $key => $sp) :
                             $xoa_sort = "?url=sort-delete-product&id=" . $sp['id_san_pham'];
                             $xoa = "?url=xoa-product&id=" . $sp['id_san_pham'];
@@ -72,8 +87,8 @@
                                             <?php
                                             if ($sp['status'] == 0) {
                                                 echo '
-                                                <a href="?url=hien-product&id=' . $sp['id_san_pham'] . '" name ="hien"  class="btn btn-secondary" >Hiện</a>     
-                                                ';
+                                                    <a href="?url=hien-product&id=' . $sp['id_san_pham'] . '" name ="hien"  class="btn btn-secondary" >Hiện</a>     
+                                                    ';
                                             } elseif ($sp['status'] == 1) {
                                                 echo '<input class="btn btn-secondary" type="submit" name="xoa" value="Ẩn">';
                                             }
@@ -82,7 +97,6 @@
                                         <form action="<?= $xoa ?>" method="post">
                                             <input class="btn btn-danger" type="submit" name="xoa" value="Xóa">
                                         </form>
-
                                         <?php
                                         if ($sp['status'] == 1) {
                                             echo '
