@@ -23,7 +23,7 @@ class LienHe extends BaseModel
     }
     public function editTrangThai($id_lienhe, $trangThai)
     {
-        $sql = "UPDATE tb_lienhe SET trang_thai='$trangThai' WHERE id_lienhe=" . $id_lienhe;
+        $sql = "UPDATE tb_lienhe SET trang_thai='$trangThai' WHERE id_lienhe=" .$id_lienhe;
         return $this->SqlExecute($sql, 0);
     }
 }
