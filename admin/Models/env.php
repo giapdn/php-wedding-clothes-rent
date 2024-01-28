@@ -2,6 +2,6 @@
 
 const DBHOST = "localhost";
 
-const DBNAME = "dressrental";
+const DBNAME = "aocuoi";
 const DBUSER = "root";
 const DBPASS = "";
