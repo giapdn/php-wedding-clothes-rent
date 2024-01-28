@@ -2,8 +2,8 @@
 session_start();
 $servername = "localhost";
 $username_db = "root";
-$password_db = "";
-$database = "aocuoi";
+$password_db = "root";
+$database = "dressrental";
 
 // Tạo kết nối
 $conn = new mysqli($servername, $username_db, $password_db, $database);

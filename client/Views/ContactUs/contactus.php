@@ -44,7 +44,7 @@
                 <div class="contact-form-content">
                     <h3 class="contact-page-title">Liên hệ với chúng tôi</h3>
                     <!-- Phần thống báo lỗi -->
-                    <!-- <?php
+                    <?php
                             if (isset($_SESSION['error_mess'])) {
                                 $error_message =  $_SESSION['error_mess'];
                                 foreach ($error_message as $message) {
@@ -55,7 +55,7 @@
                             }
                             //Sau khi thông báo lỗi thực hiện xóa session
                             unset($_SESSION['error_mess']);
-                            ?> -->
+                            ?>
                     <div class="contact-form">
                         <form id="" action="?url=contactus" method="post">
                             <div class="form-group">
@@ -78,7 +78,7 @@
 
 
                             <div class="col-md-6">
-                            <label><span class="required">*</span></label>
+                            <label>Dịch vụ<span class="required">*</span></label>
                                 <select class="form-control" >
                                     <option value="option1">Chọn dịch vụ</option>
                                     <option value="option2">Váy cưới làm lễ</option>
@@ -88,10 +88,6 @@
                                 </select>
                             </div>
                          </div>
-
-
-
-   
 
 
                             <div class="form-group form-group-2">
