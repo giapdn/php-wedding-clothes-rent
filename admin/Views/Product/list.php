@@ -33,7 +33,8 @@
 
         <form method="post" action="?url=search-product">
             <div class="d-flex justify-content-end">
-                <input class="p o v l" type="text" name="noidung" placeholder="Nhập áo cưới cần tìm" style="border-radius: 5px;">
+                <input class="p o v l" type="text" name="noidung" placeholder="Nhập áo cưới cần tìm"
+                    style="border-radius: 5px;">
                 <input class="btn btn-primary p o v" type="submit" name="timkiem" value="Tìm kiếm">
             </div>
         </form>
@@ -56,6 +57,7 @@
                         </tr>
                     </thead>
                     <tbody>
+
                         <?php
                         if (count($sanpham) == 0) {
                             echo <<<HTML
@@ -66,21 +68,36 @@
                         }
                         ?>
                         <?php foreach ($sanpham as $key => $sp) :
+
                             $xoa_sort = "?url=sort-delete-product&id=" . $sp['id_san_pham'];
                             $xoa = "?url=xoa-product&id=" . $sp['id_san_pham'];
                             $sua = "?url=sua-product&id=" . $sp['id_san_pham']; ?>
 
                             <tr>
-                                <td><?= $sp['id_san_pham'] ?></td>
-                                <td><?= $sp['ten_san_pham'] ?></td>
-                                <td><?= $sp['gia_san_pham'] ?></td>
-                                <td> <img style="width: 50px;height: auto;" src="uploads/<?= $sp['img_path_default'] ?>" alt=""></td>
                                 <td>
-                                    <textarea readonly name="" id="" cols="25" rows="2"><?= $sp['mo_ta_san_pham'] ?></textarea>
+                                    <?= $sp['id_san_pham'] ?>
                                 </td>
-                                <td><?= $sp['ma_san_pham'] ?></td>
-                                <td><?= $sp['so_luong'] ?></td>
-                                <td><?= $sp['id_danh_muc'] ?></td>
+                                <td>
+                                    <?= $sp['ten_san_pham'] ?>
+                                </td>
+                                <td>
+                                    <?= $sp['gia_san_pham'] ?>
+                                </td>
+                                <td> <img style="width: 50px;height: auto;" src="uploads/<?= $sp['img_path_default'] ?>"
+                                        alt=""></td>
+                                <td>
+                                    <textarea readonly name="" id="" cols="25"
+                                        rows="2"><?= $sp['mo_ta_san_pham'] ?></textarea>
+                                </td>
+                                <td>
+                                    <?= $sp['ma_san_pham'] ?>
+                                </td>
+                                <td>
+                                    <?= $sp['so_luong'] ?>
+                                </td>
+                                <td>
+                                    <?= $sp['id_danh_muc'] ?>
+                                </td>
                                 <td>
                                     <div class="change" style="display: flex; ">
                                         <form action="<?= $xoa_sort ?>" method="post">
@@ -108,7 +125,7 @@
                                     </div>
                                 </td>
                             <?php endforeach ?>
-                            </tr>
+                        </tr>
 
                     </tbody>
                 </table>
