@@ -6,7 +6,7 @@ class Product extends BaseModel
 {
     public function allProduct()
     {
-        $sql = "SELECT * FROM tb_sanpham";
+        $sql = "SELECT * FROM tb_sanpham where status = 1";  
         return $this->SqlExecute($sql);
     }
     public function xoaProduct($id)
@@ -34,5 +34,27 @@ class Product extends BaseModel
     {
         $sql = "UPDATE tb_sanpham SET ten_san_pham='$ten_san_pham',gia_san_pham='$gia_san_pham',mo_ta_san_pham='$mo_ta_san_pham',ma_san_pham='$ma_san_pham',id_danh_muc='$id_danh_muc',status='$status' WHERE id_san_pham=$id_san_pham";
         return $this->SqlExecute($sql, 1);
+    }
+    public function timProduct($ten_san_pham)
+    {
+        $sql = "SELECT * FROM tb_sanpham WHERE 1";
+        if ($ten_san_pham != "") {
+            $sql .= " and ten_san_pham like '%" . $ten_san_pham . "%'";
+        }
+        return $this->SqlExecute($sql);
+    }
+    public function xoaMemProduct($id)
+    {
+        $sql = "UPDATE tb_sanpham SET status = 0 WHERE id_san_pham=$id";
+        return $this->SqlExecute($sql, 1);
+    }
+    public function dsspAn(){
+        $sql = "SELECT * FROM tb_sanpham where status = 0";  
+        return $this->SqlExecute($sql);
+    }
+    public function hienThiSanPhamAn($id){
+        $sql = "UPDATE tb_sanpham SET status = 1 WHERE id_san_pham=$id";
+        return $this->SqlExecute($sql, 1);
+    
     }
 }

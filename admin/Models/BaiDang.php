@@ -5,7 +5,7 @@ class BaiDang extends BaseModel
     //bài đăng
     public function AllBaidang()
     {
-        $sql = "SELECT * FROM tb_baidang";
+        $sql = "SELECT * FROM tb_baidang where trangthai = 1";
         return $this->SqlExecute($sql);
     }
     public function thembaiviet($tieu_de, $noi_dung, $path, $username, $trangthai)
@@ -39,5 +39,22 @@ class BaiDang extends BaseModel
     {
         $sql = "SELECT * FROM tb_baidang WHERE tieu_de LIKE '%$tieu_de%'";
         return $this->SqlExecute($sql, 2);
+    }
+
+    public function AnBaiViet($id)
+    {
+        $sql = "UPDATE tb_baidang SET trangthai = 0 WHERE id_bai_dang= $id";
+        return $this->SqlExecute($sql, 1);
+    }
+
+    public function HienThiDsAn()
+    {
+        $sql = "SELECT * FROM tb_baidang where trangthai = 0";
+        return $this->SqlExecute($sql);
+    }
+    public function HienThiBaiDang($id)
+    {
+        $sql = "UPDATE tb_baidang SET trangthai = 1 WHERE id_bai_dang= $id";
+        return $this->SqlExecute($sql, 1);
     }
 }

@@ -37,8 +37,8 @@
                         </div>
                         <div class="form-group mb-3">
                             <label class="form-label">Mô tả </label>
-                            <textarea  class="form-control" name="mo_ta_san_pham" id="basic-icon-default-message" cols="30" rows="5"><?= $mo_ta_san_pham ?>"</textarea>
-                           
+                            <textarea class="form-control" name="mo_ta_san_pham" id="basic-icon-default-message" cols="30" rows="5"><?= $mo_ta_san_pham ?>"</textarea>
+
                         </div>
                         <div class="form-group mb-3">
                             <label class="form-label">Mã sản phẩm </label>
@@ -57,8 +57,8 @@
                         <div class="form-group mb-3">
                             <label class="form-label">Trạng thái</label>
                             <select class="form-select" name="status">
-                                <option value="0" selected>Ẩn</option>
                                 <option value="1">Hiện</option>
+                                <option value="0">Ẩn</option>
                             </select>
                         </div>
 
