@@ -5,7 +5,7 @@ class LienHe extends BaseModel
 {
     public function getLienHe()
     {
-        $sql = "SELECT * FROM tb_lienhe ";
+        $sql = "SELECT * FROM tb_lienhe ORDER BY `date` DESC";
         return $this->SqlExecute($sql, 2);
     }
     public function addLienHe($ten_khach_hang, $email, $dien_thoai, $noi_dung)
@@ -23,7 +23,7 @@ class LienHe extends BaseModel
     }
     public function editTrangThai($id_lienhe, $trangThai)
     {
-        $sql = "UPDATE tb_lienhe SET trang_thai='$trangThai' WHERE id_lienhe=" .$id_lienhe;
+        $sql = "UPDATE tb_lienhe SET trang_thai='$trangThai' WHERE id_lienhe=" . $id_lienhe;
         return $this->SqlExecute($sql, 0);
     }
 }

@@ -13,6 +13,7 @@
                                 <th scope="col">Sdt</th>
                                 <th scope="col">Nội dung</th>
                                 <th scope="col">Trạng thái</th>
+                                <th scope="col">Ngày gửi</th>
                                 <th scope="col">Cập nhật</th>
                             </tr>
                         </thead>
@@ -41,6 +42,7 @@
                                             <!-- <button name=""   type="submit" value="" style="height: 30px;min-width: 120px;background-color: darkgreen;border: 0;margin-top: 8px; color: white;">Check_In</button> -->
                                         <?php } ?>
                                     </td>
+                                    <td><?= $lh['date'] ?> </td>
                                     <td><a class="btn btn-primary" href="?url=phanhoi&id_lh=<?= $lh['id_lienhe'] ?>">Liên hệ</a></td>
                                 </tr>
                             <?php endforeach ?>

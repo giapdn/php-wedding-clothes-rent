@@ -209,7 +209,7 @@
                         <ul class="nav product-menu">
                         <li><a data-bs-toggle="tab" href="#reviews"><span>Liên hệ thuê váy</span></a></li>
                             <li><a class="active" data-bs-toggle="tab" href="#description"><span>Bình luận</span></a></li>
-                            <li><a data-bs-toggle="tab" href="#specification"><span>Đánh giá của khách hàng đã thuê</span></a></li>         
+                                
                         </ul>
                     </div>
                     <div class="tab-content uren-tab_content">
@@ -257,74 +257,7 @@
                             </div>
                         </div>
 
-                        <!-- Đánh giá -->
-                        <div id="specification" class="tab-pane" role="tabpanel">
-                            <form class="form-horizontal" id="form-review">
-                                <div id="review">
-                                    <table class="table table-striped table-bordered">
-                                        <tbody>
-                                            <?php foreach ($rates as $key => $value) : ?>
-                                                <tr>
-                                                    <td style="width: 50%;"><strong><?= $value["username"] ?></strong></td>
-                                                    <td class="text-right"><?= $value["ngay_them"] ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="2">
-                                                        <p><?= $value["noi_dung"] ?></p>
-                                                        <div class="rating-box">
-                                                            <ul>
-                                                                <?php
-                                                                for ($i = 0; $i < $value["so_sao"]; $i++) {
-                                                                    echo <<<HTML
-                                                                        <li><i class="ion-android-star"></i></li>
-                                                                    HTML;
-                                                                }
-                                                                ?>
-                                                            </ul>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            <?php endforeach ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <!-- <h2>Write a review</h2>
-                                <div class="form-group required">
-                                    <div class="col-sm-12 p-0">
-                                        <label>Your Email <span class="required">*</span></label>
-                                        <input class="review-input" type="email" name="con_email" id="con_email" required>
-                                    </div>
-                                </div>
-                                <div class="form-group required second-child">
-                                    <div class="col-sm-12 p-0">
-                                        <label class="control-label">Share your opinion</label>
-                                        <textarea class="review-textarea" name="con_message" id="con_message"></textarea>
-                                        <div class="help-block"><span class="text-danger">Note:</span> HTML is
-                                            not
-                                            translated!</div>
-                                    </div>
-                                </div>
-                                <div class="form-group last-child required">
-                                    <div class="col-sm-12 p-0">
-                                        <div class="your-opinion">
-                                            <label>Your Rating</label>
-                                            <span>
-                                                <select class="star-rating">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                </select>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="kenne-btn-ps_right">
-                                        <button class="kenne-btn">Continue</button>
-                                    </div>
-                                </div> -->
-                            </form>
-                        </div>
+                       
 
                         <!-- Liên hệ -->
                         <div id="reviews" class="tab-pane" role="tabpanel">
