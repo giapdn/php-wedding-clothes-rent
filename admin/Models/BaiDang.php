@@ -37,7 +37,7 @@ class BaiDang extends BaseModel
 
     public function TimKiem($tieu_de)
     {
-        $sql = "SELECT * FROM tb_baidang WHERE tieu_de LIKE '%$tieu_de%'";
+        $sql = "SELECT * FROM tb_baidang WHERE trangthai = 1 and tieu_de LIKE '%$tieu_de%'";
         return $this->SqlExecute($sql, 2);
     }
 

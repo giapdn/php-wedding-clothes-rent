@@ -37,7 +37,7 @@ class Product extends BaseModel
     }
     public function timProduct($ten_san_pham)
     {
-        $sql = "SELECT * FROM tb_sanpham WHERE 1";
+        $sql = "SELECT * FROM tb_sanpham WHERE status = 1";
         if ($ten_san_pham != "") {
             $sql .= " and ten_san_pham like '%" . $ten_san_pham . "%'";
         }
