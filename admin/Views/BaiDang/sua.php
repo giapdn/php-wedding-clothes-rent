@@ -37,8 +37,8 @@
                         <div class="form-group mb-3">
                             <label class="form-label">Trạng thái</label>
                             <select class="form-select" name="trangthai">
-                                <option value="1" selected>Public</option>
-                                <option value="0">Pivate</option>
+                                <option value="1" >Bài viết đang hiển thị</option>
+                                <option value="0">Bài viết đang ẩn</option>
                             </select>
                         </div>
 

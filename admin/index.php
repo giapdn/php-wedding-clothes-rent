@@ -59,6 +59,18 @@ switch ($url) {
     case 'import-product';
         $prodCtrllers->ListImport();
         break;
+    case 'search-product':
+        $prodCtrllers->SearchProduct();
+        break;
+    case 'sort-delete-product':
+        $prodCtrllers->SortDeleteProduct();
+        break;
+    case 'sp-an':
+        $prodCtrllers->HiddenProduct();
+        break;
+    case 'hien-product':
+        $prodCtrllers->ProductDisplay();
+        break;
         // Case sản phẩm ---
 
         //case danh mục
@@ -97,6 +109,15 @@ switch ($url) {
         break;
     case 'timkiemBaiDang':
         $baidangCtrll->SearchBD();
+        break;
+    case 'xoasort-baiviet':
+        $baidangCtrll->SortDeleteBaiViet();
+        break;
+    case 'dsan-baiviet':
+        $baidangCtrll->BaiVietAn();
+        break;
+    case 'hien-baidang':
+        $baidangCtrll->HienBaiDang();
         break;
         //case bài viết
 

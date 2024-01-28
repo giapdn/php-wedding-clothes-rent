@@ -79,7 +79,7 @@ class BaiDangController
                     $check = getimagesize($_FILES['path']['tmp_name']);
                     if ($check !== false) {
                         if (move_uploaded_file($_FILES['path']['tmp_name'], $target_file)) {
-                $trangthai = $_POST["trangthai"];
+                            $trangthai = $_POST["trangthai"];
                             $this->baidang->suaBaiViet($id, $tieu_de, $noi_dung, $path, $username, $trangthai);
                             echo '<script>alert("sửa thành công")</script>';
                             echo '<script>window.location.href="../admin/index.php?url=list-baiviet"</script>';
@@ -101,6 +101,29 @@ class BaiDangController
                 $hienThiBaiViet = $this->baidang->hienthi($id);
                 require_once "Views/BaiDang/sua.php";
             }
+        }
+    }
+    public function SortDeleteBaiViet()
+    {
+        if (isset($_GET['id']) && $_GET['id']) {
+            $id = $_GET['id'];
+            $this->baidang->AnBaiViet($id);
+            echo '<script>alert("Ẩn  thành công")</script>';
+            echo '<script>window.location.href="../admin/index.php?url=list-baiviet"</script>';
+        }
+    }
+    public function BaiVietAn()
+    {
+        $baidang = $this->baidang->HienThiDsAn();
+        include_once "Views/BaiDang/list.php";
+    }
+    public function HienBaiDang()
+    {
+        if (isset($_GET['id']) && $_GET['id']) {
+            $id = $_GET['id'];
+            $this->baidang->HienThiBaiDang($id);
+            echo '<script>alert("Hiện thị thành công")</script>';
+            echo '<script>window.location.href="../admin/index.php?url=dsan-baiviet"</script>';
         }
     }
 
