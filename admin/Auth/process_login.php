@@ -1,9 +1,10 @@
 <?php
 session_start();
-$servername = "localhost";
-$username_db = "root";
-$password_db = "root";
-$database = "dressrental";
+require_once "../Models/env.php";
+$servername = DBHOST;
+$username_db = DBUSER;
+$password_db = DBPASS;
+$database = DBNAME;
 
 // Tạo kết nối
 $conn = new mysqli($servername, $username_db, $password_db, $database);

@@ -1,7 +1,5 @@
 <?php
-
 const DBHOST = "localhost";
-
-const DBNAME = "dressrental";
+const DBNAME = "dressRental";
 const DBUSER = "root";
 const DBPASS = "";

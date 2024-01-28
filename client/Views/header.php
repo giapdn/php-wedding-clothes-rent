@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -8,13 +6,14 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Kenne</title>
     <meta name="robots" content="noindex, follow" />
-    <meta name="description" content="Kenne is a stunning html template for an expansion eCommerce site that suitable for any kind of fashion store. It will make your online store look more impressive and attractive to viewers. ">
+    <meta name="description"
+        content="Kenne is a stunning html template for an expansion eCommerce site that suitable for any kind of fashion store. It will make your online store look more impressive and attractive to viewers. ">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="client/assets/images/image-removebg-preview (9).png">
 
     <!-- CSS
-	============================================ -->
+    ============================================ -->
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="client/assets/css/bootstrap.min.css">
@@ -52,8 +51,13 @@
                                     <ul>
                                         <li><a href="javascript:void(0)">Ngôn ngữ <i class="ion-chevron-down"></i></a>
                                             <ul class="ht-dropdown">
-                                                <li class="active"><a href="javascript:void(0)"><img src="client/assets/images/menu/icon/1.jpg" alt="Kenne Language Icon">English</a></li>
-                                                <li><a href="javascript:void(0)"><img src="client/assets/images/menu/icon/images (13).jpg" alt="Kenne Language Icon" style="width: 16px; height: 11px;">Vietnamese</a>
+                                                <li class="active"><a href="javascript:void(0)"><img
+                                                            src="client/assets/images/menu/icon/1.jpg"
+                                                            alt="Kenne Language Icon">English</a></li>
+                                                <li><a href="javascript:void(0)"><img
+                                                            src="client/assets/images/menu/icon/images (13).jpg"
+                                                            alt="Kenne Language Icon"
+                                                            style="width: 16px; height: 11px;">Vietnamese</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -67,22 +71,19 @@
                                             <a href="my-account.html">Tài khoản của tôi</a>
                                         </li> -->
                                         <?php
-                                        if (isset($_SESSION["username"])) {
-                                            echo <<<HTML
-                                                <li>
-                                                    <a href="#">{$_SESSION["username"]}</a>
-                                                </li>
-                                                <li>
-                                                    <a href="?url=logOut">Đăng xuất</a>
-                                                </li>
-                                            HTML;
-                                        } else {
-                                            echo <<<HTML
-                                                <li>
-                                                    <a href="client/Views/login-register/login.php">Đăng nhập và đăng ký</a>
-                                                </li>
-                                            HTML;
-                                        }
+                                        if (isset($_SESSION['username'])) {
+                                            ?>
+                                            <li class="nav-item" id="accountDropdown">
+                                                <a class="nav-link" href="#" id="navbarDropdown" role="button"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Welcome
+                                                    <?= $_SESSION['username'] ?>
+                                                </a>
+                                            </li>
+                                            <li><a href="./?url=logOut">Logout</a></li>
+                                        <?php } else { ?>
+                                            <li class="nav-item"><a class="nav-link" href=".?url=login">Login</a></li>
+                                        <?php }
                                         ?>
                                     </ul>
                                 </div>
@@ -97,14 +98,15 @@
                         <div class="col-lg-12">
                             <div class="header-middle_nav">
                                 <div class="header-logo_area">
-                                    <a href="index.html">
+                                    <a href="./">
                                         <img src="client/assets/images/menu/logo/1.png" alt="Header Logo" width="150px">
                                     </a>
                                 </div>
 
                                 <div class="header-search_area d-none d-lg-block">
                                     <form class="search-form" action="#">
-                                        <input type="text" style="width: 600px;" placeholder="Tìm kiếm"> <!-- Điều chỉnh chiều dài tại đây -->
+                                        <input type="text" style="width: 600px;" placeholder="Tìm kiếm">
+                                        <!-- Điều chỉnh chiều dài tại đây -->
                                         <button class="search-button"><i class="ion-ios-search"></i></button>
                                     </form>
                                 </div>
@@ -133,9 +135,10 @@
                                 <div class="main-menu_area position-relative">
                                     <nav class="main-nav d-flex justify-content-center">
                                         <ul>
-                                            <li class="dropdown-holder"><a href="index.php?url=/">Trang chủ</a>
+                                            <li class="dropdown-holder"><a href="./">Trang chủ</a>
                                             </li>
-                                            <li><a href="index.php?url=productpage">Sản phẩm<i class="ion-chevron-down"></i></a>
+                                            <li><a href="index.php?url=productpage">Sản phẩm<i
+                                                        class="ion-chevron-down"></i></a>
                                                 <ul class="kenne-dropdown">
                                                     <li><a href="index.php?url=all-aocuoi">Tất cả</a></li>
                                                     <li><a href="index.php?url=aocuoilamle">Váy cưới đi làm lễ</a></li>
@@ -143,13 +146,15 @@
                                                     <li><a href="index.php?url=aodaicuoi">Áo dài cưới</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="index.php?url=page">Bộ sưu tập<i class="ion-chevron-down"></i></a>
+                                            <li><a href="index.php?url=page">Bộ sưu tập<i
+                                                        class="ion-chevron-down"></i></a>
                                                 <ul class="kenne-dropdown">
                                                     <li><a href="coming-soon_page.html">Bộ sưu tập hot 2023</a></li>
                                                     <li><a href="index.php?url=page">Bộ sưu tập độc quyền</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="javascript:void(0)">Dịch vụ khác<i class="ion-chevron-down"></i></a>
+                                            <li><a href="javascript:void(0)">Dịch vụ khác<i
+                                                        class="ion-chevron-down"></i></a>
                                                 <ul class="kenne-dropdown">
                                                     <li><a href="blog-grid_view.html">Chụp ảnh cưới</a></li>
                                                     <li><a href="blog-list_view.html">Hoa cưới</a></li>
@@ -174,7 +179,7 @@
                                     <div class="row align-items-center justify-content-between">
                                         <div class="col-lg-2 col-sm-6">
                                             <div class="header-logo_area">
-                                                <a href="index.html">
+                                                <a href="./">
                                                     <img src="client/assets/images/menu/logo/1.png" alt="Header Logo">
                                                 </a>
                                             </div>
@@ -183,23 +188,32 @@
                                             <div class="main-menu_area">
                                                 <nav class="main-nav d-flex justify-content-center">
                                                     <ul>
-                                                        <li class="dropdown-holder"><a href="index.php?url=/">Trang chủ</a>
+                                                        <li class="dropdown-holder"><a href="index.php?url=/">Trang
+                                                                chủ</a>
                                                         </li>
-                                                        <li><a href="index.php?url=productpage">Sản phẩm<i class="ion-chevron-down"></i></a>
+                                                        <li><a href="index.php?url=productpage">Sản phẩm<i
+                                                                    class="ion-chevron-down"></i></a>
                                                             <ul class="kenne-dropdown">
                                                                 <li><a href="index.php?url=all-aocuoi">Tất cả</a></li>
-                                                                <li><a href="index.php?url=aocuoilamle">Váy cưới đi làm lễ</a></li>
-                                                                <li><a href="index.php?url=aocuoidiban">Váy cưới đi bàn</a></li>
-                                                                <li><a href="index.php?url=aodaicuoi">Áo dài cưới</a></li>
+                                                                <li><a href="index.php?url=aocuoilamle">Váy cưới đi làm
+                                                                        lễ</a></li>
+                                                                <li><a href="index.php?url=aocuoidiban">Váy cưới đi
+                                                                        bàn</a></li>
+                                                                <li><a href="index.php?url=aodaicuoi">Áo dài cưới</a>
+                                                                </li>
                                                             </ul>
                                                         </li>
-                                                        <li><a href="index.php?url=page">Bộ sự tập <i class="ion-chevron-down"></i></a>
+                                                        <li><a href="index.php?url=page">Bộ sự tập <i
+                                                                    class="ion-chevron-down"></i></a>
                                                             <ul class="kenne-dropdown">
-                                                                <li><a href="coming-soon_page.html">Bộ sưu tập hot 2023</a></li>
-                                                                <li><a href="index.php?url=page">Bộ sưu tập độc quyền</a></li>
+                                                                <li><a href="coming-soon_page.html">Bộ sưu tập hot
+                                                                        2023</a></li>
+                                                                <li><a href="index.php?url=page">Bộ sưu tập độc
+                                                                        quyền</a></li>
                                                             </ul>
                                                         </li>
-                                                        <li><a href="javascript:void(0)">Dịch vụ khác <i class="ion-chevron-down"></i></a>
+                                                        <li><a href="javascript:void(0)">Dịch vụ khác <i
+                                                                    class="ion-chevron-down"></i></a>
                                                             <ul class="kenne-dropdown">
                                                                 <li><a href="blog-grid_view.html">Chụp ảnh cưới</a></li>
                                                                 <li><a href="blog-list_view.html">Hoa cưới</a></li>
@@ -216,7 +230,8 @@
                                             <div class="header-right_area header-right_area-2">
                                                 <ul>
                                                     <li class="mobile-menu_wrap d-inline-block d-lg-none">
-                                                        <a href="#mobileMenu" class="mobile-menu_btn toolbar-btn color--white">
+                                                        <a href="#mobileMenu"
+                                                            class="mobile-menu_btn toolbar-btn color--white">
                                                             <i class="ion-android-menu"></i>
                                                         </a>
                                                     </li>
@@ -233,7 +248,8 @@
                                                         </a>
                                                     </li>
                                                     <li class="d-none d-lg-inline-block">
-                                                        <a href="#offcanvasMenu" class="menu-btn toolbar-btn color--white">
+                                                        <a href="#offcanvasMenu"
+                                                            class="menu-btn toolbar-btn color--white">
                                                             <i class="ion-android-menu"></i>
                                                         </a>
                                                     </li>
@@ -255,7 +271,8 @@
                             </div>
                             <ul class="minicart-list">
                                 <li class="minicart-product">
-                                    <a class="product-item_remove" href="javascript:void(0)"><i class="ion-android-close"></i></a>
+                                    <a class="product-item_remove" href="javascript:void(0)"><i
+                                            class="ion-android-close"></i></a>
                                     <div class="product-item_img">
                                         <img src="client/assets/images/product/1-1.jpg" alt="Kenne's Product Image">
                                     </div>
@@ -265,7 +282,8 @@
                                     </div>
                                 </li>
                                 <li class="minicart-product">
-                                    <a class="product-item_remove" href="javascript:void(0)"><i class="ion-android-close"></i></a>
+                                    <a class="product-item_remove" href="javascript:void(0)"><i
+                                            class="ion-android-close"></i></a>
                                     <div class="product-item_img">
                                         <img src="client/assets/images/product/2-1.jpg" alt="Kenne's Product Image">
                                     </div>
@@ -276,7 +294,8 @@
                                     </div>
                                 </li>
                                 <li class="minicart-product">
-                                    <a class="product-item_remove" href="javascript:void(0)"><i class="ion-android-close"></i></a>
+                                    <a class="product-item_remove" href="javascript:void(0)"><i
+                                            class="ion-android-close"></i></a>
                                     <div class="product-item_img">
                                         <img src="client/assets/images/product/3-1.jpg" alt="Kenne's Product Image">
                                     </div>
@@ -305,13 +324,14 @@
                         <div class="container">
                             <a href="#" class="btn-close white-close_btn"><i class="ion-android-close"></i></a>
                             <div class="offcanvas-inner_logo">
-                                <a href="index.html">
+                                <a href="./">
                                     <img src="client/assets/images/menu/logo/1.png" alt="Header Logo">
                                 </a>
                             </div>
                             <nav class="offcanvas-navigation">
                                 <ul class="mobile-menu">
-                                    <li class="menu-item-has-children active"><a href="#"><span class="mm-text">Home</span></a>
+                                    <li class="menu-item-has-children active"><a href="#"><span
+                                                class="mm-text">Home</span></a>
                                         <ul class="sub-menu">
                                             <li>
                                                 <a href="index.html">
@@ -557,7 +577,8 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item-has-children"><a href="#"><span class="mm-text">Currency</span></a>
+                                    <li class="menu-item-has-children"><a href="#"><span
+                                                class="mm-text">Currency</span></a>
                                         <ul class="sub-menu">
                                             <li>
                                                 <a href="javascript:void(0)">
@@ -571,7 +592,8 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item-has-children"><a href="#"><span class="mm-text">Language</span></a>
+                                    <li class="menu-item-has-children"><a href="#"><span
+                                                class="mm-text">Language</span></a>
                                         <ul class="sub-menu">
                                             <li>
                                                 <a href="javascript:void(0)">
