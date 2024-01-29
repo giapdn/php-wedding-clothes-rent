@@ -1,8 +1,10 @@
 <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Khách hàng /</span> Danh sách Khách hàng</h4>
-    <div class="d-flex">
-        <a href="?url=add-baiviet"><input class="btn btn-success" type="submit" name="them" value="Thêm"></a>
-        <a href="?url=export-baiviet"><input class="btn btn-info" type="submit" name="them" value="Xuất Danh Sách"></a>
+    <div class="d-flex d-flex justify-content-between" style="margin-bottom: 10px;">
+        <div>
+            <a href="?url=add-baiviet"><input class="btn btn-success" type="submit" name="them" value="Thêm"></a>
+            <a href="?url=export-baiviet"><input class="btn btn-info" type="submit" name="them" value="Xuất Danh Sách"></a>
+        </div>
         <form action="?url=timkiemBaiDang" method="post">
             <div class="d-flex justify-content-end">
                 <input class="form-control" type="text" name="tieude" placeholder="nhập tên tiêu đề">
@@ -44,7 +46,7 @@
                                     <td>
                                         <div class="change" style="display: flex; ">
                                             <form action="<?= $xoa ?>" method="post">
-                                                <input class="btn btn-danger" type="submit" name="" value="xóa">
+                                                <input class="btn btn-danger me-2" type="submit" name="" value="xóa">
                                             </form>
                                             <form action="<?= $sua ?>" method="post">
                                                 <input class="btn btn-warning" type="submit" name="sua" value="sửa">

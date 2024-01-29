@@ -47,7 +47,7 @@ switch ($url) {
         $voteCtrll->Index();
         break;
     case 'productpage':
-        include "client/Views/Product/productpage.php";
+        $productCtrll->ListProduct();
         break;
     case 'checkout':
         include "client/Views/CheckOut/checkout.php";

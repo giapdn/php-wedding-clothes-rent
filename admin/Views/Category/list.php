@@ -29,10 +29,10 @@
                                         <div class="change" style="display: flex; ">
                                             <form action="<?= $xoa ?>" method="post">
 
-                                                <input class="btn btn-danger" type="submit" name="" value="xóa">
+                                                <input class="btn btn-danger me-2" type="submit" name="" value="xóa">
                                             </form>
                                             <form action="<?= $sua ?>" method="post">
-                                                <input class="btn btn-warning" type="submit" name="sua-category" value="sửa">
+                                                <input class="btn btn-warning me-2" type="submit" name="sua-category" value="sửa">
                                             </form>
                                         </div>
                                     </td>
