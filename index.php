@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "client/Views/header.php";
 require_once "./client/Controllers/lienHeController.php";
 require_once "./client/Controllers/ProductController.php";
@@ -16,7 +17,7 @@ switch ($url) {
     case '/':
         $productCtrll->ListFiltered();
         break;
-        //Case áo cưới
+    //Case áo cưới
     case 'all-aocuoi':
         $productCtrll->ListProduct();
         break;
@@ -32,7 +33,7 @@ switch ($url) {
     case 'productdetail':
         $productCtrll->ProductDetails();
         break;
-        //Case áo cưới
+    //Case áo cưới
 
     case 'page':
         include "client/Views/Pages/page.php";
@@ -56,23 +57,26 @@ switch ($url) {
         include "client/Views/Cart/cart.php";
         break;
 
-        //Case bình luận
+    //Case bình luận
     case 'comment-sended':
         $commentCtrll->Sended();
         break;
 
-        //case đăng nhập, đăng ký
+    //case đăng nhập, đăng ký
     case 'login':
         $authCtrll->LogIn();
         break;
     case 'register':
         $authCtrll->Register();
         break;
+    case 'forgot':
+        $authCtrll->Forgot();
+        break;
     case 'logOut':
         $authCtrll->LogOut();
         break;
 
-        //Case đánh giá
+    //Case đánh giá
     case 'danhgia':
         $voteCtrll->AddVote();
         break;
