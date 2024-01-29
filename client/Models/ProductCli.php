@@ -30,7 +30,7 @@ class ProductCli extends BaseModel
 
     public function listFilter($filter)
     {
-        $sql = "SELECT * FROM tb_sanpham WHERE id_danh_muc = '$filter' AND `status_test` = 1";
+        $sql = "SELECT * FROM tb_sanpham WHERE id_danh_muc = '$filter' AND `status` = 1";
         return $this->SqlExecute($sql, 2); // 2 là sẽ fetch all lấy nhiều cột dữ liệu
     }
 

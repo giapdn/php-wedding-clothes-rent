@@ -133,7 +133,8 @@ class ProductController
         $sanpham = $this->product->dsspAn();
         include_once "Views/Product/list.php";
     }
-    public function ProductDisplay(){
+    public function ProductDisplay()
+    {
         if (isset($_GET['id']) && $_GET['id']) {
             $id = $_GET['id'];
             $sanpham = $this->product->hienThiSanPhamAn($id);
@@ -185,7 +186,6 @@ class ProductController
         $filename = time() . ".xlsx";
         $writer->save($filename);
         echo "<script>window.location.href='$filename'</script>";
-        // echo "<script>window.location.href='?url=list-product'</script>";
     }
 
     public function ListImport()

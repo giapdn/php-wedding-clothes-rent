@@ -6,7 +6,9 @@ class Product extends BaseModel
 {
     public function allProduct()
     {
-        $sql = "SELECT * FROM tb_sanpham where status = 1";
+        $sql = "SELECT tb_sanpham.*, tb_danhmuc.mo_ta  FROM tb_sanpham
+        JOIN tb_danhmuc ON tb_sanpham.id_danh_muc = tb_danhmuc.id_danh_muc
+        WHERE tb_sanpham.status = 1";
         return $this->SqlExecute($sql);
     }
     public function xoaProduct($id)
@@ -50,7 +52,9 @@ class Product extends BaseModel
     }
     public function dsspAn()
     {
-        $sql = "SELECT * FROM tb_sanpham where status = 0";
+        $sql = "SELECT tb_sanpham.*, tb_danhmuc.mo_ta  FROM tb_sanpham
+        JOIN tb_danhmuc ON tb_sanpham.id_danh_muc = tb_danhmuc.id_danh_muc
+        WHERE tb_sanpham.status = 0";
         return $this->SqlExecute($sql);
     }
     public function hienThiSanPhamAn($id)

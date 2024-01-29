@@ -1,6 +1,6 @@
 <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Sản phẩm /</span> Danh sách sản phẩm</h4>
-    <div class="d-flex justify-content-between">
+    <div class="d-flex justify-content-between" style="margin-bottom: 15px;">
 
         <div class="link">
             <?php
@@ -74,17 +74,10 @@
                             $sua = "?url=sua-product&id=" . $sp['id_san_pham']; ?>
 
                             <tr>
-                                <td>
-                                    <?= $sp['id_san_pham'] ?>
-                                </td>
-                                <td>
-                                    <?= $sp['ten_san_pham'] ?>
-                                </td>
-                                <td>
-                                    <?= $sp['gia_san_pham'] ?>
-                                </td>
-                                <td> <img style="width: 50px;height: auto;" src="uploads/<?= $sp['img_path_default'] ?>"
-                                        alt=""></td>
+                                <td><?= $sp['id_san_pham'] ?></td>
+                                <td><?= $sp['ten_san_pham'] ?></td>
+                                <td style="color: red;"><?= number_format($sp['gia_san_pham'], 0, '.', ',') ?> đ</td>
+                                <td> <img style="width: 50px;height: auto;" src="uploads/<?= $sp['img_path_default'] ?>" alt=""></td>
                                 <td>
                                     <textarea readonly name="" id="" cols="25"
                                         rows="2"><?= $sp['mo_ta_san_pham'] ?></textarea>
@@ -98,21 +91,24 @@
                                 <td>
                                     <?= $sp['id_danh_muc'] ?>
                                 </td>
+                                <td><?= $sp['ma_san_pham'] ?></td>
+                                <td><?= $sp['so_luong'] ?></td>
+                                <td><?= $sp['mo_ta'] ?></td>
                                 <td>
                                     <div class="change" style="display: flex; ">
                                         <form action="<?= $xoa_sort ?>" method="post">
                                             <?php
                                             if ($sp['status'] == 0) {
                                                 echo '
-                                                    <a href="?url=hien-product&id=' . $sp['id_san_pham'] . '" name ="hien"  class="btn btn-secondary" >Hiện</a>     
+                                                    <a href="?url=hien-product&id=' . $sp['id_san_pham'] . '" name ="hien"  class="btn btn-secondary me-2" >Hiện</a>     
                                                     ';
                                             } elseif ($sp['status'] == 1) {
-                                                echo '<input class="btn btn-secondary" type="submit" name="xoa" value="Ẩn">';
+                                                echo '<input class="btn btn-secondary me-2" type="submit" name="xoa" value="Ẩn">';
                                             }
                                             ?>
                                         </form>
                                         <form action="<?= $xoa ?>" method="post">
-                                            <input class="btn btn-danger" type="submit" name="xoa" value="Xóa">
+                                            <input class="btn btn-danger me-2" type="submit" name="xoa" value="Xóa">
                                         </form>
                                         <?php
                                         if ($sp['status'] == 1) {
